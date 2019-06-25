@@ -4,7 +4,7 @@ import org.apache.tools.ant.taskdefs.condition.Os
 import java.net.URI
 
 plugins {
-    kotlin("multiplatform").version("1.3.50-dev-557")
+    kotlin("multiplatform").version("1.3.40")
     `maven-publish`
 }
 
@@ -16,9 +16,9 @@ allprojects {
 }
 
 group = "com.github.h0tk3y.betterParse"
-version = "0.4.0"
+version = "0.4.1"
 
-val kotlinVersion = "1.3.50-dev-557"
+val kotlinVersion = "1.3.40"
 
 kotlin {
     sourceSets {
@@ -57,19 +57,19 @@ kotlin {
         }
     }
 
-    js {
-        compilations["main"].defaultSourceSet.dependencies {
-            implementation(kotlin("stdlib-js", kotlinVersion))
-            implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:0.9.0")
-        }
-        compilations["test"].defaultSourceSet.dependencies {
-            implementation(kotlin("test-js", kotlinVersion))
-        }
-
-        compilations.all {
-            kotlinOptions.moduleKind = "umd"
-        }
-    }
+//    js {
+//        compilations["main"].defaultSourceSet.dependencies {
+//            implementation(kotlin("stdlib-js", kotlinVersion))
+//            implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:0.9.0")
+//        }
+//        compilations["test"].defaultSourceSet.dependencies {
+//            implementation(kotlin("test-js", kotlinVersion))
+//        }
+//
+//        compilations.all {
+//            kotlinOptions.moduleKind = "umd"
+//        }
+//    }
 
     presets.withType(org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTargetPreset::class).forEach {
         targetFromPreset(it) {
@@ -134,16 +134,16 @@ publishing {
     repositories {
         maven {
             name = "bintray"
-            val bintrayUsername = "hotkeytlt"
+            val bintrayUsername = "niklimenko"
             val bintrayRepoName = "maven"
-            val bintrayPackageName = "better-parse"
+            val bintrayPackageName = "better-parse-fork"
             url = URI(
                 "https://api.bintray.com/maven/$bintrayUsername/$bintrayRepoName/$bintrayPackageName/;publish=0"
             )
 
             credentials {
-                username = findProperty("bintray_user") as? String
-                password = findProperty("bintray_api_key") as? String
+                username = "niklimenko"
+                password = "b886de272e4e95401b81f79b0ada49083a33fa47"
             }
         }
     }
