@@ -4,7 +4,7 @@ import org.apache.tools.ant.taskdefs.condition.Os
 import java.net.URI
 
 plugins {
-    kotlin("multiplatform").version("1.3.40")
+    kotlin("multiplatform").version("1.3.50")
     `maven-publish`
 }
 
@@ -16,9 +16,9 @@ allprojects {
 }
 
 group = "com.github.h0tk3y.betterParse"
-version = "0.4.1"
+version = "0.4.2"
 
-val kotlinVersion = "1.3.40"
+val kotlinVersion = "1.3.60-dev-2303"
 
 kotlin {
     sourceSets {

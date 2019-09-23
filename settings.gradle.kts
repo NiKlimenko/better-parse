@@ -20,7 +20,7 @@ pluginManagement {
     }
 }
 
- include(":benchmarks", ":demo:demo-jvm", ":demo:demo-js", ":demo:demo-native")
+// include(":benchmarks", ":demo:demo-jvm", ":demo:demo-js", ":demo:demo-native")
 
 rootProject.name = "better-parse-multiplatform"
 
